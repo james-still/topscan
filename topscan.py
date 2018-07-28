@@ -17,7 +17,6 @@ print(figlet_format('topscan', font='larry3d'))
 
 # url we need to scrape
 url = raw_input("\n\nflavorwire url: ")
-tag = raw_input("the specific tag the list uses: ")
 clear()
 
 # amount of items in the list
@@ -28,7 +27,7 @@ items = int(items) + 2
 # complex freaking loop
 for i in range(2, items):
     html = BeautifulSoup(urllib2.urlopen(url + "/" + str(i)), 'html.parser')
-    print(html.find(tag).get_text())
+    print(html.find('strong').get_text())
     i += 1
 
 print("\n\nenjoy your results :)")
