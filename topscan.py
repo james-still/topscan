@@ -3,8 +3,11 @@
 from pyfiglet import figlet_format
 from bs4 import BeautifulSoup
 import os
-import urllib2
 import re
+try:
+    import urllib.request as urllib2
+except ImportError:
+    import urllib2
 
 def clear():
     if os.name == 'nt':
@@ -16,7 +19,7 @@ clear()
 print(figlet_format('topscan', font='larry3d'))
 
 # url we need to scrape
-url = raw_input("\n\nflavorwire url: ")
+url = input("\n\nflavorwire url: ")
 clear()
 
 # amount of items in the list
